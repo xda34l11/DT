@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/DT9</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000 url('https://c.top4top.io/m_3402hjesm1.mp4') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff; /* لون النص الأساسي أبيض */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 750px; 
+            height: auto;
+            border: 2px solid #ffffff; /* برواز أبيض */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #ffffff;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); 
+            white-space: pre-wrap;
+            background: rgba(0, 0, 0, 0.8); /* خلفية سوداء داكنة لتبرز النص الأبيض */
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ffffff; 
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .text {
+            margin-top: 20px;
+            font-size: 3.5em; 
+            font-weight: bold;
+            color: #ffffff;
+            /* توهج أبيض (Neon White) */
+            text-shadow: 0px 0px 10px #ffffff, 0px 0px 20px rgba(255, 255, 255, 0.5);
+            letter-spacing: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://cdn.discordapp.com/banners/1409098740681146440/ef38c74cbf74a15d689e1f1403926c3a.webp?size=1024" alt="Discord Image">
+    </div>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="رابط_الأغنية_هنا" type="audio/mpeg">
+    </audio>
+
+    <div class="info" id="ip-info">
+        > SYSTEM WHITE PROTOCOL...
+        > STATUS: CRYSTAL CLEAR
+    </div>
+
+    <div class="text">discord.gg/DT9</div>
+
+    <script>
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            delete data.readme;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.textContent = JSON.stringify(data, null, 4);
+        })
+        .catch(err => {
+            document.getElementById('ip-info').textContent = "ERROR: DATA NOT FOUND";
+        });
+    </script>
+</body>
+</html>
