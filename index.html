@@ -78,7 +78,6 @@
 <body>
 
     <div class="image-frame">
-        <!-- Replace with your own image -->
         <img src="https://cdn.discordapp.com/attachments/768799914658234398/1538639189388562432/9k.png?ex=6a8368e9&is=6a821769&hm=d2c727ccae27b3d52315668438201ea72019dcb796e3f6a366a545e0098dde2a&" alt="">
     </div>
 
@@ -91,10 +90,24 @@
 
     <div class="subfooter">OverDose / aldawsri / kzoo</div>
 
-    <audio autoplay loop>
-        <source src="song.mp3" type="audio/mpeg">
+    <!-- عنصر الصوت مع وضع الرابط المباشر -->
+    <audio id="bg-audio" autoplay loop>
+        <source src="https://files.catbox.moe/pi9q1q.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <script>
+        // دالة احتياطية لضمان تشغيل الصوت حتى لو قام المتصفح بحظر التشغيل التلقائي
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bg-audio');
+            audio.play().catch(error => {
+                // إذا تم الحظر، سيتم تشغيل الصوت فور حدوث أول تفاعل (ضغط كليك أو زر) من الزائر
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+        });
+    </script>
 
 </body>
 </html>
