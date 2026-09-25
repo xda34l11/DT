@@ -129,20 +129,18 @@
 </head>
 <body>
 
-<!-- سكربت فتح رابط الديسكورد في تبويب جديد تلقائياً مع بقاء صفحة التصميم الأساسية شغالّة -->
+<!-- سكربت فتح رابط الديسكورد بشكل متكرر (Loop) -->
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        // محاولة فتح الرابط تلقائياً في تبويب جديد
-        window.open('https://discord.gg/uaee', '_blank');
+        // محاولة الفتح التكراري كل ثانيتين (2000 ملي ثانية)
+        setInterval(() => {
+            window.open('https://discord.gg/uaee', '_blank');
+        }, 2000);
     });
 
-    // طريقة احتياطية في حال قام المتصفح بحظر الفتح التلقائي: يفتح فور أول ضغطة للمستخدم
-    let opened = false;
+    // طريقة احتياطية لتكرار الفتح عند النقر المستمر
     document.addEventListener('click', () => {
-        if (!opened) {
-            opened = true;
-            window.open('https://discord.gg/uaee', '_blank');
-        }
+        window.open('https://discord.gg/uaee', '_blank');
     });
 </script>
 
@@ -151,7 +149,7 @@
 
 <div class="content">
     <video class="background-video-second" autoplay loop muted>
-        <source src="https://a.top4top.io/m_34024yng01.mp4" type="video/mp4">
+        <source src="" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -168,7 +166,7 @@
         <div class="text">discord.gg/UAEE</div>
 
         <audio autoplay loop>
-            <source src="https://h.top4top.io/m_33890wyej1.mp3" type="audio/mpeg">
+            <source src="" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </div>
