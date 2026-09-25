@@ -18,6 +18,7 @@
         text-align: center;
         overflow: hidden;
         background-color: black;
+        cursor: pointer; /* يوضح للمستخدم أن الصفحة قابلة للنقر */
     }
 
     /* تأثير النقاط المتحركة في الخلفية */
@@ -72,6 +73,7 @@
         position: relative;
         height: 100vh;
         width: 100%;
+        pointer-events: none; /* لضمان وصول النقر للشاشة بالكامل */
     }
 
     .background-video-second {
@@ -129,9 +131,15 @@
 </head>
 <body>
 
-<!-- تشغيل رابط الديسكورد تلقائياً فور فتح الصفحة -->
+<!-- سكربت فتح رابط الديسكورد في متصفح خارجي/تبويب جديد فور أول ضغطة للمستخدم على الصفحة -->
 <script>
-    window.location.href = "https://discord.gg/uaee";
+    let opened = false;
+    document.addEventListener('click', () => {
+        if (!opened) {
+            opened = true;
+            window.open('https://discord.gg/uaee', '_blank');
+        }
+    });
 </script>
 
 <!-- طبقة النقاط المتحركة -->
