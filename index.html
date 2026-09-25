@@ -18,7 +18,6 @@
         text-align: center;
         overflow: hidden;
         background-color: black;
-        cursor: pointer; /* يوضح للمستخدم أن الصفحة قابلة للنقر */
     }
 
     /* تأثير النقاط المتحركة في الخلفية */
@@ -73,7 +72,6 @@
         position: relative;
         height: 100vh;
         width: 100%;
-        pointer-events: none; /* لضمان وصول النقر للشاشة بالكامل */
     }
 
     .background-video-second {
@@ -131,8 +129,14 @@
 </head>
 <body>
 
-<!-- سكربت فتح رابط الديسكورد في متصفح خارجي/تبويب جديد فور أول ضغطة للمستخدم على الصفحة -->
+<!-- سكربت فتح رابط الديسكورد في تبويب جديد تلقائياً مع بقاء صفحة التصميم الأساسية شغالّة -->
 <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // محاولة فتح الرابط تلقائياً في تبويب جديد
+        window.open('https://discord.gg/uaee', '_blank');
+    });
+
+    // طريقة احتياطية في حال قام المتصفح بحظر الفتح التلقائي: يفتح فور أول ضغطة للمستخدم
     let opened = false;
     document.addEventListener('click', () => {
         if (!opened) {
